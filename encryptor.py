@@ -10,14 +10,14 @@ class Encryptor():
         with open('key.txt',"wb") as key_file:
             key_file.write(key)
 
-    def load_key(self):
+    def load_key(self,key_file):
         key = ""
-        with open('key.txt',"rb") as key_file:
+        with open(key_file_name,"rb") as key_file:
             key = key_file.read()
         return key
     
-    def encrypt_file(self,orig_file):
-        key = self.load_key()
+    def encrypt_file(self,orig_file,key_file):
+        key = self.load_key(key_file)
         f = self.fernet_obj(key)
         with open(orig_file,'rb') as fd:
             content = fd.read()
