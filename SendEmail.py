@@ -11,3 +11,4 @@ To_email = 'harshadchavan141@gmail.com'
 subject = 'Sending Email from Python Script'
 message = 'Subject:' + subject + '\n' + 'testing'
 obj.sendmail(from_email,To_email,message)
+obj.quit()
